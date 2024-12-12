@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    overflow: hidden;
+}
+
+#game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../Galactica/img/galaxia-andromeda.jpg'); /* Caminho da imagem de fundo */
+    background-size: cover;
+    background-position: center;
+}
+
+#player {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-image: url('../Galactica/img/unnamed.png'); /* Caminho da imagem da nave do jogador */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.projectile {
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    background-color: red;
+}
+
+.comet {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('../Galactica/img/1.png'); /* Caminho da imagem do cometa */
+    background-image: url('../Galactica/img/2.png'); /* Caminho da imagem do cometa */
+    background-image: url('../Galactica/img/3.png'); /* Caminho da imagem do cometa */
+    background-image: url('../Galactica/img/4.png'); /* Caminho da imagem do cometa */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall 5s linear infinite;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+}
+
+#start-message {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif; /* Fonte estilo galáctico */
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+    animation: blink 1s infinite, jump 0.5s infinite alternate, colorChange 2s infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ff0000;
+    }
+    25% {
+        color: #ff7f00;
+    }
+    50% {
+        color: #ffff00;
+    }
+    75% {
+        color: #00ff00;
+    }
+    100% {
+        color: #0000ff;
+    }
+}
